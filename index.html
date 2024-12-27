@@ -41,7 +41,7 @@
             const followingElement = document.querySelector('#following');
             const linkElement = document.querySelector('#link');
 
-            fetch('https://github.com/gaabe007')
+            fetch('https://api.github.com/users/gaabe007')
             .then(function(res) {
                 return res.json();
             })
@@ -49,9 +49,9 @@
                 nameElement.innerText = json.name;
                 usernameElement.innerText = json.login;
                 avatarElement.src = json.avatar_url;
-                followingElement.innerText = json.follwing;
+                followingElement.innerText = json.following;
                 followersElement.innerText = json.followers;
-                repos.innerText = json.piblic_repos;
+                repos.innerText = json.public_repos;
                 linkElement.href = json.html_url;
             })
         })
